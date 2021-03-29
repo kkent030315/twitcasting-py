@@ -7,6 +7,6 @@ jobs:
     steps:
       - checkout
       - run:
-          command: python setup.py install
+          command: sudo python setup.py install
       - run:
           command: python tests/test.py
