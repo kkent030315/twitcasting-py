@@ -15,6 +15,7 @@ def main() -> None:
     token = twitcasting.generate_token(video_id=video_id)
     live_status = twitcasting.get_live_viewer_status(token, video_id)
 
+    print(twitcasting.get_stream_detail(user))
     print("VideoId", video_id)
     print("isLive?", is_live)
     print("fmp4SockAddr", fmp4_sock_address)
