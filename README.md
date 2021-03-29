@@ -5,7 +5,7 @@
 </p>
 
 # twitcasting-py
-A unofficial python module for wrapping TwitCasting common APIs
+An unofficial python module for wrapping TwitCasting common APIs
 
 # Usage
 
