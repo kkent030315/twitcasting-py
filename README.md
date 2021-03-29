@@ -1,3 +1,8 @@
+<p align=center>
+    <img src="https://img.shields.io/circleci/build/github/kkent030315/twitcasting-py/main?style=for-the-badge">
+    <img src="https://img.shields.io/pypi/v/twitcasting-py?style=for-the-badge">
+</p>
+
 # twitcasting-py
 A unofficial python module for wrapping TwitCasting common APIs
 
