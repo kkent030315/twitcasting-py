@@ -7,4 +7,6 @@ jobs:
     steps:
       - checkout
       - run:
+          command: python setup.py
+      - run:
           command: python tests/test.py
