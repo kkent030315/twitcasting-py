@@ -4,6 +4,7 @@ import time
 
 TWCS_STREAM_SERVER_API_ENDPOINT = "https://twitcasting.tv/streamserver.php"
 TWCS_FRONTEND_API_ENDPOINT = "https://frontendapi.twitcasting.tv"
+TWCS_PUBSUB_API_ENDPOINT = "https://twitcasting.tv/eventpubsuburl.php"
 
 
 def get_stream_detail(target: str, mode: str = "client"):
@@ -59,6 +60,27 @@ def get_fmp4_sock_address(target: str):
 def get_llfmp4_sock_address(target: str, server: str = "main"):
     detail = get_stream_detail(target=target)
     return detail["llfmp4"]["streams"][server]
+
+
+def get_event_pubsub_url(video_id: str):
+    timestamp = int(time.time())
+
+    data = {
+        "movie_id": video_id,
+        "__n": timestamp,
+    }
+
+    response = requests.post(
+        TWCS_PUBSUB_API_ENDPOINT,
+        data=data
+    )
+
+    if (response.status_code != 200):
+        raise Exception(f"ERR: Http Failed with {response.status_code}")
+
+    res_json = response.json()
+
+    return res_json["url"]
 
 
 def is_stream_clippable(movie_id: str):

@@ -5,7 +5,7 @@ import twitcasting
 
 
 def main() -> None:
-    user = "user_id"
+    user = "izayoikaede"
     video_id = twitcasting.get_video_id(user)
     is_live = twitcasting.is_user_live(user)
     fmp4_sock_address = twitcasting.get_fmp4_sock_address(user)
@@ -14,6 +14,7 @@ def main() -> None:
     live_title = twitcasting.get_live_title(user)
     token = twitcasting.generate_token(video_id=video_id)
     live_status = twitcasting.get_live_viewer_status(token, video_id)
+    event_pubsub_url = twitcasting.get_event_pubsub_url(video_id=video_id)
 
     print(twitcasting.get_stream_detail(user))
     print("VideoId", video_id)
@@ -24,6 +25,7 @@ def main() -> None:
     print("liveTitle", live_title)
     print("token", token)
     print("liveStatus", live_status)
+    print("eventPubsubUrl", event_pubsub_url)
 
 
 if __name__ == "__main__":
