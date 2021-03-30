@@ -5,7 +5,7 @@ import twitcasting
 
 
 def main() -> None:
-    user = "izayoikaede"
+    user = "user_id"
     video_id = twitcasting.get_video_id(user)
     is_live = twitcasting.is_user_live(user)
     fmp4_sock_address = twitcasting.get_fmp4_sock_address(user)
